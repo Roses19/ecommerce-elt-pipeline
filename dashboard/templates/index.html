@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Giới thiệu hệ thống</h2>
+  <p><b>Đề tài:</b> XÂY DỰNG HỆ THỐNG PIPELINE ELT XỬ LÝ DỮ LIỆU E-COMMERCE TỪ BỘ DỮ LIỆU CÓ SẴN</p>
+
+  <p>
+    Hệ thống được xây dựng nhằm khai thác và phân tích dữ liệu thương mại điện tử từ 
+    <b>bộ dữ liệu Olist</b> – một tập dữ liệu công khai được thu thập từ sàn giao dịch trực tuyến Olist tại Brazil. 
+    Đây là một trong những bộ dữ liệu thương mại điện tử lớn và đa dạng nhất hiện nay, thường được sử dụng trong 
+    nghiên cứu và giảng dạy về khoa học dữ liệu, phân tích kinh doanh và xây dựng hệ thống dữ liệu.
+  </p>
+
+  <h3>Bộ dữ liệu Olist</h3>
+  <p>
+    Bộ dữ liệu Olist được công bố trên nền tảng Kaggle, bao gồm nhiều bảng dữ liệu phản ánh đầy đủ các khía cạnh chính 
+    của hoạt động thương mại điện tử, với 9 bảng chính:
+  </p>
+  <ul>
+    <li><b>olist_orders_dataset:</b> Thông tin các đơn hàng (mã đơn, thời gian tạo, trạng thái, thời gian giao hàng).</li>
+    <li><b>olist_customers_dataset:</b> Thông tin khách hàng (ID khách hàng, thành phố, bang).</li>
+    <li><b>olist_sellers_dataset:</b> Thông tin nhà bán hàng (ID, vị trí địa lý, thông tin liên hệ).</li>
+    <li><b>olist_products_dataset:</b> Thông tin sản phẩm (mã, danh mục, kích thước, khối lượng).</li>
+    <li><b>olist_order_items_dataset:</b> Chi tiết sản phẩm trong từng đơn hàng, kết nối sản phẩm và nhà bán hàng.</li>
+    <li><b>olist_order_payments_dataset:</b> Thông tin thanh toán (phương thức, số lần trả góp, giá trị).</li>
+    <li><b>olist_order_reviews_dataset:</b> Đánh giá của khách hàng (điểm 1–5, nhận xét).</li>
+    <li><b>product_category_name_translation:</b> Ánh xạ tên danh mục sản phẩm từ tiếng Bồ Đào Nha sang tiếng Anh.</li>
+    <li><b>olist_geolocation_dataset:</b> Dữ liệu vị trí địa lý (tọa độ, mã vùng).</li>
+  </ul>
+
+  <h3>Mối quan hệ dữ liệu</h3>
+  <p>
+    Các bảng dữ liệu liên kết với nhau thông qua <b>khóa chính</b> và <b>khóa ngoại</b>, 
+    tạo thành một sơ đồ quan hệ dữ liệu phản ánh quy trình thương mại điện tử từ khách hàng, đơn hàng, 
+    sản phẩm cho tới nhà bán hàng, thanh toán và đánh giá.
+  </p>
+
+  <img src="{{ url_for('static', filename='olist_schema.png') }}" alt="ERD Olist Dataset" width="80%">
+{% endblock %}

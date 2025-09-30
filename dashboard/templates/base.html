@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+    <h2>Lựa chọn</h2>
+    <a href="{{ url_for('index') }}">Giới thiệu</a>
+    <a href="{{ url_for('overview') }}">Tổng quan</a>
+    <a href="{{ url_for('analysis') }}">Hiệu suất giao hàng</a>
+    <a href="{{ url_for('customer') }}">Chất lượng khách hàng</a>
+    <a href="{{ url_for('category') }}">Phân tích sản phẩm & danh mục</a>
+    <a href="{{ url_for('seller') }}">Phân tích Seller</a>
+    <a href="{{ url_for('payment') }}">Tài chính & Thanh toán</a>
+    </div>
+
+  <div class="content">
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>
